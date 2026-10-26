@@ -2,61 +2,64 @@
 
 **Grupo:** DSM 4-1 · **Matrícula:** 25311035 · **Materia:** Aplicaciones Web · **Universidad Tecnológica de Hermosillo**
 
-![Python](https://img.shields.io/badge/Python-3.14-blue)
-![Django](https://img.shields.io/badge/Django-6.1-green)
-![MySQL](https://img.shields.io/badge/MySQL-Aiven-orange)
-![Deploy](https://img.shields.io/badge/Deploy-Render-purple)
+![Python](https://img.shields.io/badge/Python-Django-blue)
+![Django](https://img.shields.io/badge/Framework-Django-green)
+![MySQL](https://img.shields.io/badge/Database-MySQL-orange)
+![Render](https://img.shields.io/badge/Deploy-Render-purple)
+![GitHub](https://img.shields.io/badge/Code-GitHub-black)
 
-## Demo y repositorio
+## Demo en vivo y repositorio
 
 - **Repositorio GitHub:** https://github.com/AguayoGonzalezEdgarSteven/u4s8-aguayo-gonzalez-edgar-steven
-- **Sitio en producción:** https://u4s8-aguayo-gonzalez-edgar-steven.onrender.com
+- **Sitio en Render:** https://u4s8-aguayo-gonzalez-edgar-steven.onrender.com
 - **Inicio de sesión:** https://u4s8-aguayo-gonzalez-edgar-steven.onrender.com/login/
 - **Servicios:** https://u4s8-aguayo-gonzalez-edgar-steven.onrender.com/servicios/
 
-> **Nota:** Render puede suspender los servicios gratuitos después de un periodo de inactividad. La primera carga puede tardar unos segundos.
+> **Nota:** Los servicios gratuitos de Render pueden entrar en suspensión después de un periodo de inactividad. La primera visita puede tardar unos segundos en cargar.
 
 ## Descripción del proyecto
 
-Aplicación web desarrollada con Django para administrar servicios mediante cuentas de usuario. Cada persona puede registrarse, iniciar sesión y gestionar sus propios servicios.
+U4S8 es la práctica final de la materia Aplicaciones Web. Consiste en una aplicación desarrollada con Django y Python para administrar servicios mediante cuentas de usuario.
 
-El sistema incluye operaciones CRUD (crear, consultar, actualizar y eliminar), búsqueda, paginación, autenticación y validación de formularios. La aplicación está preparada para utilizar una base de datos MySQL alojada en la nube y desplegarse en Render.
+El proyecto integra los conocimientos adquiridos durante el curso: estructura de una aplicación web, diseño con HTML y Tailwind CSS, conexión con una base de datos MySQL, operaciones CRUD, formularios, autenticación, sesiones, búsqueda, paginación y despliegue en la nube.
+
+Cada usuario puede registrarse, iniciar sesión y administrar sus propios servicios. La aplicación está preparada para trabajar con MySQL en Aiven y publicarse en Render.
 
 ## Tecnologías utilizadas
 
-| Tecnología | Función |
+| Tecnología | Uso |
 |---|---|
-| Python | Lenguaje de programación principal |
-| Django | Framework para desarrollar la aplicación web |
+| Python | Lenguaje principal del backend |
+| Django | Framework para desarrollar la aplicación |
 | MySQL en Aiven | Base de datos en la nube |
-| PyMySQL | Conexión entre Python y MySQL |
-| Tailwind CSS | Diseño y estilos de las páginas |
+| PyMySQL | Conexión de Python con MySQL |
+| HTML5 | Estructura de las páginas |
+| Tailwind CSS | Diseño y estilos responsivos |
 | Gunicorn | Servidor WSGI para producción |
 | WhiteNoise | Administración de archivos estáticos |
 | python-decouple | Lectura de variables de entorno |
-| Git y GitHub | Control de versiones y alojamiento del código |
+| Git y GitHub | Control de versiones y almacenamiento del código |
 | Render | Despliegue y publicación de la aplicación |
 
-## Funcionalidades
+## Funcionalidades principales
 
-- Registro de nuevos usuarios.
+- Registro de usuarios.
 - Inicio y cierre de sesión.
-- Autenticación mediante el sistema de usuarios de Django.
-- Creación de servicios.
-- Consulta de los servicios registrados.
-- Edición y eliminación de servicios propios.
-- Validación de formularios mediante `ModelForm`.
-- Validación personalizada del precio mediante `clean_precio`.
+- Autenticación mediante `django.contrib.auth`.
+- Creación, consulta, edición y eliminación de servicios.
+- Validación de formularios con `ModelForm`.
+- Validación personalizada del precio mediante `clean_precio`, si está implementada en la versión desplegada.
 - Búsqueda de servicios por título.
-- Paginación del listado de servicios.
-- Restricción de acceso a los servicios de otros usuarios.
+- Paginación de resultados.
+- Acceso restringido a los servicios de cada usuario.
 - Mensajes informativos para las acciones realizadas.
-- Diseño adaptable a diferentes tamaños de pantalla.
+- Diseño adaptable a computadoras y dispositivos móviles.
+- Configuración para despliegue en Render.
 
 ## Estructura del proyecto
 
 ```text
-miproyecto-django_ages/
+u4s8-aguayo-gonzalez-edgar-steven/
 ├── core/
 │   ├── models.py
 │   ├── forms.py
@@ -82,10 +85,134 @@ miproyecto-django_ages/
 └── README.md
 ```
 
-*Nota: la estructura anterior representa la organización esperada del proyecto; los archivos y directorios exactos pueden variar según la versión de tu repositorio.*
+*La estructura es orientativa. Los archivos y las plantillas deben coincidir con los que realmente existen en el repositorio.*
 
 ## Rutas principales
 
 | Ruta | Descripción | Acceso |
 |---|---|---|
-| `/` | Página
+| `/` | Página de inicio | Público |
+| `/registro/` | Registro de usuarios | Público |
+| `/login/` | Inicio de sesión | Público |
+| `/logout/` | Cierre de sesión | Usuario autenticado |
+| `/servicios/` | Listado de servicios | Usuario autenticado |
+| `/servicios/nuevo/` | Crear un servicio | Usuario autenticado |
+| `/servicios/<id>/editar/` | Editar un servicio | Según permisos |
+| `/servicios/<id>/eliminar/` | Eliminar un servicio | Según permisos |
+| `/admin/` | Administración de Django | Superusuario |
+
+## Seguridad y configuración
+
+Para ejecutar el proyecto en producción, las credenciales y configuraciones sensibles deben mantenerse fuera del código público.
+
+| Variable | Función |
+|---|---|
+| `SECRET_KEY` | Firma de sesiones y otros componentes de seguridad de Django |
+| `DEBUG` | Activa o desactiva el modo de depuración |
+| `ALLOWED_HOSTS` | Define los dominios permitidos |
+| `CSRF_TRUSTED_ORIGINS` | Configura los orígenes de confianza para formularios |
+| `DB_NAME` | Nombre de la base de datos |
+| `DB_USER` | Usuario de la base de datos |
+| `DB_PASSWORD` | Contraseña de la base de datos |
+| `DB_HOST` | Servidor de la base de datos |
+| `DB_PORT` | Puerto de conexión |
+
+El archivo `.env` debe excluirse de Git mediante `.gitignore`. En producción, `DEBUG` debe estar desactivado y las credenciales deben configurarse en el panel de Render.
+
+## Cómo ejecutar el proyecto en local
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/AguayoGonzalezEdgarSteven/u4s8-aguayo-gonzalez-edgar-steven.git
+cd u4s8-aguayo-gonzalez-edgar-steven
+```
+
+### 2. Crear el entorno virtual
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+### 3. Instalar las dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configurar las variables de entorno
+
+Crea el archivo `.env` en la raíz del proyecto y agrega las variables requeridas por `settings.py`.
+
+Ejemplo orientativo:
+
+```dotenv
+SECRET_KEY=tu_clave_secreta
+DEBUG=True
+ALLOWED_HOSTS=127.0.0.1,localhost
+DB_NAME=nombre_de_base
+DB_USER=usuario
+DB_PASSWORD=contrasena
+DB_HOST=host_de_mysql
+DB_PORT=3306
+```
+
+Los nombres deben coincidir con los que utiliza tu configuración de Django. No publiques tus credenciales reales.
+
+### 5. Aplicar las migraciones
+
+```bash
+python manage.py migrate
+```
+
+### 6. Ejecutar el servidor
+
+```bash
+python manage.py runserver
+```
+
+Abre el sitio local en:
+
+http://127.0.0.1:8000/
+
+## Despliegue en Render
+
+**Build Command**
+
+```bash
+pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+```
+
+**Start Command**
+
+```bash
+gunicorn miproyecto_ages.wsgi:application
+```
+
+El módulo `miproyecto_ages` corresponde al nombre de configuración que apareció en el registro local de Django. Si la ubicación de `wsgi.py` cambia, el comando deberá ajustarse.
+
+Configura en Render las variables de entorno requeridas por la aplicación y verifica que la conexión con MySQL funcione correctamente.
+
+---
+
+# Historial del curso — unidades y prácticas
+
+## Unidad 1 · Fundamentos de desarrollo web
+
+**Objetivo:** aprender a estructurar páginas web y presentar información mediante HTML y estilos con Tailwind CSS.
+
+| Práctica | Tema | Enlaces |
+|---|---|---|
+| U1S1 | Creación y publicación de un portafolio estático | [GitHub](https://github.com/AguayoGonzalezEdgarSteven/portafolio_ESAG) |
+| U1S2 | Diseño de una página personal con Tailwind CSS | [GitHub](https://github.com/AguayoGonzalezEdgarSteven/ine_personal_ESAG) · [Render](https://ine-personal-esag.onrender.com) |
+
+**Resumen de la unidad:** se desarrollaron páginas web estáticas, se trabajó con HTML5 y Tailwind CSS y se publicaron los primeros proyectos en internet mediante Render.
+
+## Unidad 2 · Django y bases de datos MySQL
+
+**Objetivo:** introducir el desarrollo del backend con Django y conectar la aplicación con una base de datos en la nube.
+
+| Práctica | Tema | Enlaces |
+|---|---|---|
+| Unidad 2 · Proyecto Django | Aplicación Django conectada con MySQL en Aiven | [GitHub](https://github.com/AguayoGonzalezEdgarSteven/miproyecto_django_aiven_ages) ·
