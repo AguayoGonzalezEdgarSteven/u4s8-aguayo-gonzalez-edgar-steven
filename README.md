@@ -215,4 +215,58 @@ Configura en Render las variables de entorno requeridas por la aplicación y ver
 
 | Práctica | Tema | Enlaces |
 |---|---|---|
-| Unidad 2 · Proyecto Django | Aplicación Django conectada con MySQL en Aiven | [GitHub](https://github.com/AguayoGonzalezEdgarSteven/miproyecto_django_aiven_ages) ·
+| Unidad 2 · Proyecto Django | Aplicación Django conectada con MySQL en Aiven | [GitHub](https://github.com/AguayoGonzalezEdgarSteven/miproyecto_django_aiven_ages) · [Render](https://crud-admin-servicios-aivin-sjqy.onrender.com) |
+
+**Resumen de la unidad:** se trabajó con proyectos Django, configuración de bases de datos MySQL, modelos, migraciones y administración de registros. También se practicó la publicación de aplicaciones web en Render.
+
+*El `index.html` proporcionado contiene dos bloques de enlaces para esta unidad, pero apuntan al mismo repositorio y al mismo sitio. Por eso se consolidaron en una sola entrada para evitar duplicados.*
+
+## Unidad 3 · Operaciones CRUD y autenticación
+
+**Objetivo:** desarrollar aplicaciones dinámicas que permitan gestionar información y controlar el acceso de los usuarios.
+
+| Práctica | Tema | Enlaces |
+|---|---|---|
+| U3S5 | Desarrollo de una aplicación web con operaciones CRUD | [GitHub](https://github.com/AguayoGonzalezEdgarSteven/u3s5-aguayo-gonzalez-edgar-steven) · [Render](https://u3s5-aguayo-gonzalez-edgar-steven.onrender.com) |
+| U3S6 | Continuación del proyecto Django y gestión de usuarios | [GitHub](https://github.com/AguayoGonzalezEdgarSteven/u3s6-aguayo-gonzalez-edgar-steven) · [Render](https://u3s6-aguayo-gonzalez-edgar-steven.onrender.com) |
+
+**Resumen de la unidad:** se avanzó en la creación de aplicaciones dinámicas, el manejo de registros, los formularios y la interacción con la base de datos. También se trabajó con la autenticación y el control de sesiones para proteger las funcionalidades de la aplicación.
+
+## Unidad 4 · Proyecto integrador y despliegue final
+
+**Objetivo:** integrar los conocimientos del curso mediante una aplicación Django que permita administrar servicios y publicarse en un entorno de producción.
+
+| Práctica | Tema | Enlaces |
+|---|---|---|
+| U4S7 | Búsqueda, paginación y mejoras de experiencia de usuario | [GitHub](https://github.com/AguayoGonzalezEdgarSteven/u4s7-aguayo-gonzalez-edgar-steven) · [Render](https://u4s7-aguayo-gonzalez-edgar-steven.onrender.com/login/) |
+| U4S8 | Integración final, documentación y despliegue | [GitHub](https://github.com/AguayoGonzalezEdgarSteven/u4s8-aguayo-gonzalez-edgar-steven) · [Render](https://u4s8-aguayo-gonzalez-edgar-steven.onrender.com/login/) |
+
+**Resumen de la unidad:** se integraron las funcionalidades de la aplicación, incluyendo autenticación, gestión de servicios, búsqueda y paginación. También se preparó el proyecto para producción mediante variables de entorno, administración de archivos estáticos, migraciones y despliegue en Render.
+
+## Qué se trabajó durante el curso
+
+- **Semana 1:** creación de un sitio web estático y publicación en Render.
+- **Semana 2:** diseño de páginas web mediante Tailwind CSS.
+- **Semana 3:** desarrollo con Django y conexión a MySQL en Aiven.
+- **Semana 4:** modelos, migraciones, rutas y configuración del servidor.
+- **Semana 5:** operaciones CRUD y validación de formularios.
+- **Semana 6:** registro, autenticación, sesiones y protección de rutas.
+- **Semana 7:** búsqueda, paginación y mejoras de interfaz.
+- **Semana 8:** integración final, configuración de producción, documentación y despliegue.
+
+*Los resúmenes describen los objetivos generales de las prácticas con base en el historial disponible; no sustituyen la comprobación del contenido de cada repositorio.*
+
+## Autor
+
+**Aguayo Gonzalez Edgar Steven**
+
+- **Carrera:** TSU en Desarrollo de Software Multiplataforma
+- **Grupo:** DSM 4-1
+- **Matrícula:** 25311035
+- **Institución:** Universidad Tecnológica de Hermosillo
+- **Correo institucional:** a25311035@uthermosillo.edu.mx
+- **GitHub:** https://github.com/AguayoGonzalezEdgarSteven
+
+---
+
+Proyecto académico desarrollado para la materia **Aplicaciones Web**, correspondiente a la práctica **U4S8**.
